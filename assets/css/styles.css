@@ -2,43 +2,67 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Courier New', Courier, monospace;
   }
 
 
 header {
     display: flex;
+    /*
     background-color: green;
+    */
     flex-wrap: wrap;
+    width: 100%;
 }
 
 header h2 {
     font-size: 30px;
     flex: 1;
-    width: 50%;
+    width: 33%;
     margin-right: 0;
     padding-right: 30px;
 }
 
 header nav {
     display: flex;
+
     font-size: 25px;
     flex: 2;
-    width: 50%;
+    width: 33%;
+    /*
     background-color: lightblue;
+    */
     /*
     text-align: right;
     */
-    /*padding-right: 30px;*/
+    /*
+    padding-right: 30px;
+    */
 
 }
 
-header nav p{
-
+header nav .total-score-text{
+    text-align: right;
+    margin-left: 0px;
+    padding-left: 0px;
     flex: 1;
+    width: 33%;
+    /*
+    background-color: teal;
+    */
 }
 
-header nav div {
+header nav .score-number-text {
+    text-align: right;
     flex: 2;
+    width: 33%;
+    margin-left: 10px;
+    margin-right: 50px;
+    margin-top: 10px;
+    color: blue
+    /*
+    background-color: pink;
+    */
 }
 
 section {
@@ -57,4 +81,13 @@ section {
     flex: 3;
     */
     width: 33%;
-  }
+}
+
+
+
+
+@media screen and (max-width:980px){
+    header nav .score-number-text {
+        margin-top: 20px;
+    }
+}

@@ -5,7 +5,7 @@
     font-family: 'Courier New', Courier, monospace;
   }
 
-
+/* header styling start */
 header {
     display: flex;
     /*
@@ -43,7 +43,7 @@ header nav {
 
 }
 
-header nav .total-score-text{
+header nav .time-remaining-text{
     text-align: right;
     margin-left: 0px;
     padding-left: 0px;
@@ -54,25 +54,42 @@ header nav .total-score-text{
     */
 }
 
-header nav .score-number-text {
+header nav .time-remaining-number {
     text-align: right;
     flex: 2;
     width: 33%;
     margin-left: 10px;
     margin-right: 50px;
-    color: blue
+    color: red;
     /*
     background-color: pink;
     */
 }
+/* header styling end */
 
+
+/* quiz question area start */
 section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 33% 0 33%;
-    margin-top: 100px;
-    padding-bottom: 200px;
+    text-align: center;
+    margin: 20%;
+    margin-top: 10%;
+    border-style: ridge;
+    border-width: 5px;
+}
+
+.start-game-text{
+    margin: 10px 33% 10px 33%;
+}
+
+.answer-buttons-area .start-button{
+    margin: 10px 33% 10px 33%;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+   
 }
 
 .button{
@@ -83,7 +100,7 @@ section {
     */
     width: 33%;
 }
-
+/* quiz question area end */
 
 
 

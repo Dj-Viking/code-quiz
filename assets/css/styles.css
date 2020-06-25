@@ -13,6 +13,7 @@ header {
     */
     flex-wrap: wrap;
     width: 100%;
+    margin-top: 10px;
 }
 
 header h2 {
@@ -21,6 +22,7 @@ header h2 {
     width: 33%;
     margin-right: 0;
     padding-right: 30px;
+    
 }
 
 header nav {
@@ -58,7 +60,6 @@ header nav .score-number-text {
     width: 33%;
     margin-left: 10px;
     margin-right: 50px;
-    margin-top: 10px;
     color: blue
     /*
     background-color: pink;
@@ -87,7 +88,7 @@ section {
 
 
 @media screen and (max-width:980px){
-    header nav .score-number-text {
+    header  {
         margin-top: 20px;
     }
 }

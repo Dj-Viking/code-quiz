@@ -15,3 +15,19 @@
 //view high scores will link to a separate html page with the scores display
 //then have a link to go back to start game page
 
+var question = ["here is a question", "here is a nother question"]
+
+var goToQuestions = document.querySelector("#text-link");
+var questionBox = document.querySelector("#quiz-question-text");
+
+
+function createQuestion(){
+    
+    listItemEl.className = "task-item";
+    listItemEl.setAttribute("data-task-id", taskIdCounter);
+    var questionText = document.createElement("div");
+}
+
+
+goToQuestions.addEventListener("click", createQuestion);
+

@@ -18,12 +18,12 @@
 
 
 
-var questionArray= ["question1", "question2", "question3", "question4"]
+var questionArray= ["How do you properly write HTML tags?", "What is the correct syntax for an if conditional statement?", "What does the querySelector do?", "what is the last step in placing a newly created HTML element inside another element using javascript?"]
 
-var answerButtonArray1 = ["page 1 answer 1", "page 1 answer 2", "page 1 answer 3", " page 1 answer 4"]
-var answerButtonArray2 = ["page 2 answer 1", "page 2 answer 2", "page 2 answer 3", " page 2 answer 4"]
-var answerButtonArray3 = ["page 3 answer 1", "page 3 answer 2", "page 3 answer 3", " page 3 answer 4"]
-var answerButtonArray4 = ["page 4 answer 1", "page 4 answer 2", "page 4 answer 3", " page 4 answer 4"]
+var answerButtonArray1 = ["<div></div>", "var = div", "<divsoup>", "<ilikehtml/>"]
+var answerButtonArray2 = ["if(condition){statement}", "if(this) then(that)", "as if", "if{condition}(statement)"]
+var answerButtonArray3 = ["asks a question", "selects an element in the document by its 1.class or 2.id", "selects a query", "provides answers"]
+var answerButtonArray4 = ["pick it up and drop it there", "meow im a cat", "parentElement.appendChild(childElement);", "childElement.appendChild(parentElement);"]
 
 var goToQuestions = document.querySelector("#text-link");
 var questionBox = document.querySelector("#quiz-question-text");

@@ -86,16 +86,41 @@ section {
 
 .start-game-text{
     margin: 10px 33% 10px 33%;
+    /* clicking start game triggers display none attribute */
 
 }
 
-.answer-buttons-area .start-button{
+.start-button-area .start-button{
     margin: 10px 33% 10px 33%;
     background-color: purple;
     color: white;
     font-size: 20px;
+    /* clicking start game triggers display: none; attribute */
+}
+
+.answer-buttons-area {
+    display: none;
+    display: flex;
+ 
+    /* clicking start game triggers display: block; attribute */
+}
+
+.submit-answer1, .submit-answer2, .submit-answer3, .submit-answer4 {
+    display: none;
+    /* clicking start game triggers display: block; attribute */
     
-   
+}
+
+.answer-button-text {
+  text-align: center;
+    
+}
+
+.answer-buttons-area button{
+    margin: 10px 33% 10px 33%;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
 }
 
 .start-button .button-text .text-link{

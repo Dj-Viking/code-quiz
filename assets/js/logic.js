@@ -14,6 +14,10 @@
 //view high scores will link to a separate html page with the scores display
 //then have a link to go back to start game page
 
+
+
+
+
 var questionArray= ["question1", "question2", "question3", "question4"]
 
 var answerButtonArray1 = ["page 1 answer 1", "page 1 answer 2", "page 1 answer 3", " page 1 answer 4"]
@@ -203,6 +207,8 @@ function createAnswerButtonsPage4(){
 }
 
 function endGame(){
+
+    window.alert("Game over!!");
     
 }
 
@@ -210,10 +216,34 @@ function rightOrWrong(){
 
 }
 
+function timer(){
+
+    
+    var timerNumber = document.querySelector("#timer-text");
+    var counter = 75;
+    timerNumber.textContent = counter;
+    
+        function countdown(){
+            console.log(counter);
+            counter--;
+            timerNumber.textContent = counter;
+        if(counter === 0){
+            console.log("Game Over!!");
+            clearInterval(startCountdown);
+            endGame();
+        }
+    }
+
+var startCountdown = setInterval(countdown, 1000)
+
+
+}
+
 
 
 goToQuestions.addEventListener("click", createQuestions);
 goToQuestions.addEventListener("click", createAnswerButtonsPage1);
+goToQuestions.addEventListener("click", timer);
 
 //go to page 2
 answerButton1.addEventListener("click", createAnswerButtonsPage2); 

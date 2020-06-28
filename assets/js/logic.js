@@ -31,6 +31,20 @@ var answerButton1 = document.querySelector("#submit-answer1");
 var answerButton2 = document.querySelector("#submit-answer2");
 var answerButton3 = document.querySelector("#submit-answer3");
 var answerButton4 = document.querySelector("#submit-answer4");
+var answerButton5 = document.querySelector("#submit-answer5");
+var answerButton6 = document.querySelector("#submit-answer6");
+var answerButton7 = document.querySelector("#submit-answer7");
+var answerButton8 = document.querySelector("#submit-answer8");
+var answerButton9 = document.querySelector("#submit-answer9");
+var answerButton10 = document.querySelector("#submit-answer10");
+var answerButton11 = document.querySelector("#submit-answer11");
+var answerButton12 = document.querySelector("#submit-answer12");
+var answerButton13 = document.querySelector("#submit-answer13");
+var answerButton14 = document.querySelector("#submit-answer14");
+var answerButton15 = document.querySelector("#submit-answer15");
+var answerButton16 = document.querySelector("#submit-answer16");
+
+var userScore = 0;
 
 
 
@@ -86,13 +100,24 @@ function createAnswerButtonsPage1(){
 
 function createAnswerButtonsPage2(){
     //this will handle once one of the answers is clicked all the question buttons will
-
     
+    //hide the old buttons from the old function
+    answerButton1.setAttribute("style", "display: none;");
+    answerButton2.setAttribute("style", "display: none;");
+    answerButton3.setAttribute("style", "display: none;");
+    answerButton4.setAttribute("style", "display: none;");
+    //display the new buttons for the next function
+    answerButton5.setAttribute("style", "display: block;");
+    answerButton6.setAttribute("style", "display: block;");
+    answerButton7.setAttribute("style", "display: block;");
+    answerButton8.setAttribute("style", "display: block;");
+
+
     //query which elements we are writing to by their id
-    var answerButton1Div = document.querySelector("#answer-button-text1")
-    var answerButton2Div = document.querySelector("#answer-button-text2")
-    var answerButton3Div = document.querySelector("#answer-button-text3")
-    var answerButton4Div = document.querySelector("#answer-button-text4")
+    var answerButton1Div = document.querySelector("#answer-button-text5")
+    var answerButton2Div = document.querySelector("#answer-button-text6")
+    var answerButton3Div = document.querySelector("#answer-button-text7")
+    var answerButton4Div = document.querySelector("#answer-button-text8")
     
     var questionText = document.querySelector("#quiz-question-text");
     
@@ -105,8 +130,85 @@ function createAnswerButtonsPage2(){
     
     //update the question for page 2
     questionText.textContent = questionArray[1];
+
+    
 }
 
+function createAnswerButtonsPage3(){
+
+    //hide the old buttons from the old function
+    answerButton5.setAttribute("style", "display: none;");
+    answerButton6.setAttribute("style", "display: none;");
+    answerButton7.setAttribute("style", "display: none;");
+    answerButton8.setAttribute("style", "display: none;");
+    //display the new buttons for the next function
+    answerButton9.setAttribute("style", "display: block;");
+    answerButton10.setAttribute("style", "display: block;");
+    answerButton11.setAttribute("style", "display: block;");
+    answerButton12.setAttribute("style", "display: block;");
+
+
+    //query which elements we are writing to by their id
+    var answerButton1Div = document.querySelector("#answer-button-text9")
+    var answerButton2Div = document.querySelector("#answer-button-text10")
+    var answerButton3Div = document.querySelector("#answer-button-text11")
+    var answerButton4Div = document.querySelector("#answer-button-text12")
+    
+    var questionText = document.querySelector("#quiz-question-text");
+    
+
+    //write the new values in
+    answerButton1Div.textContent = answerButtonArray3[0];
+    answerButton2Div.textContent = answerButtonArray3[1];
+    answerButton3Div.textContent = answerButtonArray3[2];
+    answerButton4Div.textContent = answerButtonArray3[3];
+    
+    //update the question for page 3
+    questionText.textContent = questionArray[2];
+
+}
+
+function createAnswerButtonsPage4(){
+
+    //hide the old buttons from the old function
+    answerButton9.setAttribute("style", "display: none;");
+    answerButton10.setAttribute("style", "display: none;");
+    answerButton11.setAttribute("style", "display: none;");
+    answerButton12.setAttribute("style", "display: none;");
+    //display the new buttons for the next function
+    answerButton13.setAttribute("style", "display: block;");
+    answerButton14.setAttribute("style", "display: block;");
+    answerButton15.setAttribute("style", "display: block;");
+    answerButton16.setAttribute("style", "display: block;");
+
+
+    //query which elements we are writing to by their id
+    var answerButton1Div = document.querySelector("#answer-button-text13")
+    var answerButton2Div = document.querySelector("#answer-button-text14")
+    var answerButton3Div = document.querySelector("#answer-button-text15")
+    var answerButton4Div = document.querySelector("#answer-button-text16")
+    
+    var questionText = document.querySelector("#quiz-question-text");
+    
+
+    //write the new values in
+    answerButton1Div.textContent = answerButtonArray4[0];
+    answerButton2Div.textContent = answerButtonArray4[1];
+    answerButton3Div.textContent = answerButtonArray4[2];
+    answerButton4Div.textContent = answerButtonArray4[3];
+    
+    //update the question for page 2
+    questionText.textContent = questionArray[3];
+
+}
+
+function endGame(){
+    
+}
+
+function rightOrWrong(){
+
+}
 
 
 
@@ -120,10 +222,24 @@ answerButton3.addEventListener("click", createAnswerButtonsPage2);
 answerButton4.addEventListener("click", createAnswerButtonsPage2);
 
 //go to page 3
+answerButton5.addEventListener("click", createAnswerButtonsPage3);
+answerButton6.addEventListener("click", createAnswerButtonsPage3);
+answerButton7.addEventListener("click", createAnswerButtonsPage3);
+answerButton8.addEventListener("click", createAnswerButtonsPage3);
 
 //go to page 4
+answerButton9.addEventListener("click", createAnswerButtonsPage4);
+answerButton10.addEventListener("click", createAnswerButtonsPage4);
+answerButton11.addEventListener("click", createAnswerButtonsPage4);
+answerButton12.addEventListener("click", createAnswerButtonsPage4);
 
 //go to high scores
+answerButton13.addEventListener("click", endGame);
+answerButton14.addEventListener("click", endGame);
+answerButton15.addEventListener("click", endGame);
+answerButton16.addEventListener("click", endGame);
+
+
 
 
 

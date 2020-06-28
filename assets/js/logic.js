@@ -65,18 +65,15 @@ function createAnswerButtonsPage1(){
     answerButton2.setAttribute("style", "display: block;");
     answerButton3.setAttribute("style", "display: block;");
     answerButton4.setAttribute("style", "display: block;");
-    
-    //create divs to append to the container
-    var answerButton1Div = document.createElement("div");
-    var answerButton2Div = document.createElement("div");
-    var answerButton3Div = document.createElement("div");
-    var answerButton4Div = document.createElement("div");
 
-    //assigning classnames to the divs
-    answerButton1Div.id = "answer-button-text1";
-    answerButton2Div.id = "answer-button-text2";
-    answerButton3Div.id = "answer-button-text3";
-    answerButton4Div.id = "answer-button-text4";
+
+    
+    //target the div that im writing to
+    
+    var answerButton1Div = document.querySelector("#answer-button-text1")
+    var answerButton2Div = document.querySelector("#answer-button-text2")
+    var answerButton3Div = document.querySelector("#answer-button-text3")
+    var answerButton4Div = document.querySelector("#answer-button-text4")
 
     //writing the text to the div 
     answerButton1Div.textContent = answerButtonArray1[0];
@@ -84,11 +81,6 @@ function createAnswerButtonsPage1(){
     answerButton3Div.textContent = answerButtonArray1[2];
     answerButton4Div.textContent = answerButtonArray1[3];
 
-    //append the div into the answerbutton containers
-    answerButton1.appendChild(answerButton1Div);
-    answerButton2.appendChild(answerButton2Div);
-    answerButton3.appendChild(answerButton3Div);
-    answerButton4.appendChild(answerButton4Div);
     
 }
 
@@ -96,45 +88,22 @@ function createAnswerButtonsPage2(){
     //this will handle once one of the answers is clicked all the question buttons will
 
     
-    //hide the first set of divs with page 1 questions
+    //query which elements we are writing to by their id
     var answerButton1Div = document.querySelector("#answer-button-text1")
     var answerButton2Div = document.querySelector("#answer-button-text2")
     var answerButton3Div = document.querySelector("#answer-button-text3")
     var answerButton4Div = document.querySelector("#answer-button-text4")
     
-    answerButton1Div.setAttribute("style", "display: none;");
-    answerButton2Div.setAttribute("style", "display: none;");
-    answerButton3Div.setAttribute("style", "display: none;");
-    answerButton4Div.setAttribute("style", "display: none;");
-    
-    //create new divs to append to the container
-    var answer2Button1Div = document.createElement("div");
-    var answer2Button2Div = document.createElement("div");
-    var answer2Button3Div = document.createElement("div");
-    var answer2Button4Div = document.createElement("div");
-    
-    //assigning classnames to the divs
-    answer2Button1Div.id = "#answer-button-text4";
-    answer2Button2Div.id = "#answer-button-text5";
-    answer2Button3Div.id = "#answer-button-text6";
-    answer2Button4Div.id = "#answer-button-text7";
-
-    answer2Button1Div.textContent = answerButtonArray2[0];
-    answer2Button2Div.textContent = answerButtonArray2[1];
-    answer2Button3Div.textContent = answerButtonArray2[2];
-    answer2Button4Div.textContent = answerButtonArray2[3];
-
-    answerButton1.appendChild(answer2Button1Div);
-    answerButton2.appendChild(answer2Button2Div);
-    answerButton3.appendChild(answer2Button3Div);
-    answerButton4.appendChild(answer2Button4Div);
-    
-    //repopulate from the questionButtonArray 2
     var questionText = document.querySelector("#quiz-question-text");
+    
 
-
+    //write the new values in
+    answerButton1Div.textContent = answerButtonArray2[0];
+    answerButton2Div.textContent = answerButtonArray2[1];
+    answerButton3Div.textContent = answerButtonArray2[2];
+    answerButton4Div.textContent = answerButtonArray2[3];
+    
     //update the question for page 2
-
     questionText.textContent = questionArray[1];
 }
 

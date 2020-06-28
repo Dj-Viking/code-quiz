@@ -20,10 +20,15 @@
 
 var questionArray= ["How do you properly write HTML tags?", "What is the correct syntax for an if conditional statement?", "What does the querySelector do?", "what is the last step in placing a newly created HTML element inside another element using javascript?"]
 
+//submit-answer1 correct answers <div></div>, 
+//submit-answer5 if(conditon){statement}, 
+//submit-answer10 selects an element in the document by it's 1.class or 2.id, 
+//submit-answer15 parentElement.appendChild(childElement);, 
+
 var answerButtonArray1 = ["<div></div>", "var = div", "<divsoup>", "<ilikehtml/>"]
 var answerButtonArray2 = ["if(condition){statement}", "if(this) then(that)", "as if", "if{condition}(statement)"]
-var answerButtonArray3 = ["asks a question", "selects an element in the document by its 1.class or 2.id", "selects a query", "provides answers"]
-var answerButtonArray4 = ["pick it up and drop it there", "meow im a cat", "parentElement.appendChild(childElement);", "childElement.appendChild(parentElement);"]
+var answerButtonArray3 = ["asks a question", "selects an element in the document by it's 1.class or 2.id", "selects a query", "provides answers"]
+var answerButtonArray4 = ["pick it up and drop it there", "meow im a cat", "parentElement. appendChild (childElement);", "childElement. appendChild (parentElement);"]
 
 var goToQuestions = document.querySelector("#text-link");
 var questionBox = document.querySelector("#quiz-question-text");
@@ -49,7 +54,7 @@ var answerButton15 = document.querySelector("#submit-answer15");
 var answerButton16 = document.querySelector("#submit-answer16");
 
 var userScore = 0;
-
+var counter = 0; 
 
 
 var startpageAnswerInvisibleToVisible = document.querySelector(".answer-button")
@@ -92,6 +97,8 @@ function createAnswerButtonsPage1(){
     var answerButton2Div = document.querySelector("#answer-button-text2")
     var answerButton3Div = document.querySelector("#answer-button-text3")
     var answerButton4Div = document.querySelector("#answer-button-text4")
+
+
 
     //writing the text to the div 
     answerButton1Div.textContent = answerButtonArray1[0];
@@ -206,19 +213,60 @@ function createAnswerButtonsPage4(){
 
 }
 
-function endGame(){
 
-    window.alert("Game over!!");
+function highScoreHandler(){
+    
+    var delayInMilliseconds = 1000; //1 second delay
+    
+    setTimeout(function() {
+        window.confirm("lets continue with the high scores!");
+        console.log("test high score delay");
+        //wait to do this stuff after the page is loaded
+        
+        //highscorehandler function code here
+        var highScoreList = document.querySelector("#list-container")
+        var highScoreContainer = document.createElement("li");
+        highScoreContainer.className = "high-score-text";
+        var highScoreName = document.createElement("div");
+        highScoreName.className = "score-name";
+        var highScoreNumber = document.createElement("div");
+        highScoreNumber.className = "score-number";
+        
+        highScoreName.textContent = window.prompt("Type your name to store into the Scoreboard!");
+        highScoreNumber.textContent = userScore;
+        
+        localStorage.setItem("highScoreName", highScoreName.textContent);
+        localStorage.setItem("highScoreNumber", highScoreNumber.textContent);
+        
+        var getHighScoreName = localStorage.getItem("highScoreName")
+        var getHighScoreNumber = localStorage.getItem("highScoreNumber")
+        if (!highScoreName || !highScoreNumber) return
+        
+        highScoreList.appendChild(highScoreContainer);
+        highScoreContainer.appendChild(highScoreName);
+        highScoreContainer.appendChild(highScoreNumber);
+    
+        highScoreName.textContent = getHighScoreName;
+        highScoreNumber.textContent = getHighScoreNumber;
+    }, delayInMilliseconds);
+    
+    
     
 }
 
-function rightOrWrong(){
 
+function endGame(){
+    //delay endgame so that score can be saved
+    var delayInMilliseconds = 1000; //1 second
+    
+    setTimeout(function() {
+      window.alert("game over!!");
+        console.log("test endGame delay");
+    }, delayInMilliseconds);
+    
 }
 
 function timer(){
-
-    
     var timerNumber = document.querySelector("#timer-text");
     var counter = 75;
     timerNumber.textContent = counter;
@@ -233,45 +281,79 @@ function timer(){
             endGame();
         }
     }
-
 var startCountdown = setInterval(countdown, 1000)
-
-
 }
 
 
+function incrementScore(){
+    userScore += 10;
+    console.log("Player increased score to: " + userScore);
+    localStorage.setItem("userScore", userScore);
 
+    //display the right answer message
+}
+
+function decrementScoreAndTime(){
+    userScore -= 5;
+    counter -= 20;//hmmmm not sure how this is done yet
+    console.log("Player lost points and time: " + userScore);
+    localStorage.setItem("userScore", userScore);
+
+    //display the wrong answer message
+}
+
+//create questions, answers and start timer
 goToQuestions.addEventListener("click", createQuestions);
 goToQuestions.addEventListener("click", createAnswerButtonsPage1);
 goToQuestions.addEventListener("click", timer);
 
-//go to page 2
-answerButton1.addEventListener("click", createAnswerButtonsPage2); 
-answerButton2.addEventListener("click", createAnswerButtonsPage2); 
+//go to page 2 handle adding points, subtracting points and subtracting time
+answerButton1.addEventListener("click", createAnswerButtonsPage2);
+//add event listener only for answerButton1 to increment 
+answerButton1.addEventListener("click", incrementScore);
+//add event listener only for answerButtons 2,3,4 to decrement score and time
+answerButton2.addEventListener("click", createAnswerButtonsPage2);
+answerButton2.addEventListener("click", decrementScoreAndTime); 
 answerButton3.addEventListener("click", createAnswerButtonsPage2); 
+answerButton3.addEventListener("click", decrementScoreAndTime);
 answerButton4.addEventListener("click", createAnswerButtonsPage2);
+answerButton4.addEventListener("click", decrementScoreAndTime);
 
 //go to page 3
 answerButton5.addEventListener("click", createAnswerButtonsPage3);
+//add event listener to increment score when Button5 is clicked
+answerButton5.addEventListener("click", incrementScore);
+//decrement score for buttons 6,7,8
 answerButton6.addEventListener("click", createAnswerButtonsPage3);
+answerButton6.addEventListener("click", decrementScoreAndTime);
 answerButton7.addEventListener("click", createAnswerButtonsPage3);
+answerButton7.addEventListener("click", decrementScoreAndTime);
 answerButton8.addEventListener("click", createAnswerButtonsPage3);
+answerButton8.addEventListener("click", decrementScoreAndTime);
 
 //go to page 4
+//decrement score for buttons 9,11,12
 answerButton9.addEventListener("click", createAnswerButtonsPage4);
+answerButton9.addEventListener("click", decrementScoreAndTime);
+//increment score on button10
+answerButton10.addEventListener("click", incrementScore);
 answerButton10.addEventListener("click", createAnswerButtonsPage4);
 answerButton11.addEventListener("click", createAnswerButtonsPage4);
+answerButton11.addEventListener("click", decrementScoreAndTime);
 answerButton12.addEventListener("click", createAnswerButtonsPage4);
+answerButton12.addEventListener("click", decrementScoreAndTime);
 
 //go to high scores
+answerButton13.addEventListener("click", decrementScoreAndTime);
 answerButton13.addEventListener("click", endGame);
+answerButton14.addEventListener("click", decrementScoreAndTime);
 answerButton14.addEventListener("click", endGame);
+//increment score on button15
+answerButton15.addEventListener("click", incrementScore);
 answerButton15.addEventListener("click", endGame);
+//decrement the others
+answerButton16.addEventListener("click", decrementScoreAndTime);
 answerButton16.addEventListener("click", endGame);
-
-
-
-
 
 console.dir(document);
 

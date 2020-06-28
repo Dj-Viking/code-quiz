@@ -139,6 +139,11 @@ section {
     color: white;
     text-align: center;
 }
+
+.quiz-page-link{
+    text-decoration: none;
+    display: hidden;
+}
 /* quiz question area end */
 
 

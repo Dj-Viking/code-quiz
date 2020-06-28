@@ -98,11 +98,20 @@ section {
     /* clicking start game triggers display: none; attribute */
 }
 
-.answer-buttons-area {
+.answer-buttons-area, #answer-buttons-area {
     display: none;
     display: flex;
+    flex-direction: column;
+    visibility: hidden;
  
     /* clicking start game triggers display: block; attribute */
+}
+
+.answer-button {
+    display: none;
+    /* have to do this for the beginning start page to hide the rogue buttons
+    appearing and stretching the page */
+    /* will display: block; when the first page loads */
 }
 
 .submit-answer1, .submit-answer2, .submit-answer3, .submit-answer4 {
@@ -111,7 +120,7 @@ section {
     
 }
 
-.answer-button-text {
+#answer-button-text1, #answer-button-text2, #answer-button-text3, #answer-button-text4 {
   text-align: center;
     
 }

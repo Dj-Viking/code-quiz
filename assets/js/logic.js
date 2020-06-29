@@ -18,7 +18,12 @@
 
 
 
-var questionArray= ["How do you properly write HTML tags?", "What is the correct syntax for an if conditional statement?", "What does the querySelector do?", "what is the last step in placing a newly created HTML element inside another element using javascript?"]
+var questionArray= [
+"How do you properly write HTML tags?", 
+"What is the correct syntax for an if conditional statement?", 
+"What does the querySelector do?", 
+"what is the last step in placing a newly created HTML element inside another element using javascript?"
+]
 
 //submit-answer1 correct answers <div></div>, 
 //submit-answer5 if(conditon){statement}, 

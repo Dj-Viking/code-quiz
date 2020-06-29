@@ -59,7 +59,9 @@ var counter = 0;
 
 var startpageAnswerInvisibleToVisible = document.querySelector(".answer-button")
 
-
+var feedbackContainer = document.querySelector("#feedback-text-container");
+feedbackContainer.setAttribute("style", "display: none;");
+   
 
 
 function createQuestions(){
@@ -250,8 +252,6 @@ function highScoreHandler(){
         highScoreNumber.textContent = getHighScoreNumber;
     }, delayInMilliseconds);
     
-    
-    
 }
 
 
@@ -291,6 +291,14 @@ function incrementScore(){
     localStorage.setItem("userScore", userScore);
 
     //display the right answer message
+
+    var feedbackContainer = document.querySelector("#feedback-text-container");
+    feedbackContainer.setAttribute("style", "display: block;");
+    feedbackContainer.setAttribute("style", "color: blue;");
+    feedbackContainer.textContent = "Right answer!!"
+
+    
+
 }
 
 function decrementScoreAndTime(){
@@ -300,6 +308,10 @@ function decrementScoreAndTime(){
     localStorage.setItem("userScore", userScore);
 
     //display the wrong answer message
+    var feedbackContainer = document.querySelector("#feedback-text-container");
+    feedbackContainer.setAttribute("style", "display: block;");
+    feedbackContainer.setAttribute("style", "color: red;");
+    feedbackContainer.textContent = "Wrong answer!!"
 }
 
 //create questions, answers and start timer

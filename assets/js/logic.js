@@ -262,6 +262,8 @@ function endGame(){
     setTimeout(function() {
       window.alert("game over!!");
         console.log("test endGame delay");
+        window.alert("Click View Highscores at the top to see how you did!")
+
     }, delayInMilliseconds);
     
 }
@@ -286,7 +288,7 @@ var startCountdown = setInterval(countdown, 1000)
 
 
 function incrementScore(){
-    userScore += 10;
+    userScore += 30;
     console.log("Player increased score to: " + userScore);
     localStorage.setItem("userScore", userScore);
 
@@ -302,7 +304,7 @@ function incrementScore(){
 }
 
 function decrementScoreAndTime(){
-    userScore -= 5;
+    userScore -= 50;
     counter -= 20;//hmmmm not sure how this is done yet
     console.log("Player lost points and time: " + userScore);
     localStorage.setItem("userScore", userScore);
